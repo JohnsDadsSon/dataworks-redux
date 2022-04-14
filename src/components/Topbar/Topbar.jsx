@@ -1,11 +1,67 @@
 import React from "react";
 import "./Topbar.css";
-import { Button } from "@mui/material";
+import { InputLabel } from "@mui/material";
+import SelectInput from "@mui/material/Select/SelectInput";
+import { Select, FormControl, MenuItem } from "@mui/material";
+import { borderRadius } from "@mui/system";
 
 const Topbar = () => {
   return (
     <div>
-      <h1>Navbar</h1>
+      <div className="topbar">
+        <div className="topbarWrapper">
+          <div className="topLeft">
+            <img className="logo" src="./dataworkspng.png" />
+            <FormControl
+              variant="filled"
+              sx={{ backgroundColor: "#3e3e6e", borderRadius: 1 }}
+            >
+              <InputLabel id="demo-simple-select-label" sx={{ color: "white" }}>
+                Main Menu
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Main Menu"
+              >
+                <MenuItem>What</MenuItem>
+                <MenuItem>Goes</MenuItem>
+                <MenuItem>Here?</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+          <div className="topRight">
+            <FormControl variant="filled" sx={{ borderRadius: 1 }}>
+              <InputLabel id="demo-simple-select-label" sx={{ color: "white" }}>
+                Allen O'Neill
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Main Menu"
+              >
+                <MenuItem>What</MenuItem>
+                <MenuItem>Goes</MenuItem>
+                <MenuItem>Here?</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl variant="filled" sx={{ borderRadius: 1 }}>
+              <InputLabel id="demo-simple-select-label" sx={{ color: "white" }}>
+                Support
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Main Menu"
+              >
+                <MenuItem>What</MenuItem>
+                <MenuItem>Goes</MenuItem>
+                <MenuItem>Here?</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

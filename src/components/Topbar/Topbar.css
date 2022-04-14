@@ -1,1 +1,31 @@
-
+.topbar {
+  width: 100%;
+  height: 50px;
+  background-color: #352d56;
+  padding: 5px;
+}
+.topbarWrapper {
+  height: 100%;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topLeft {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo {
+  height: 50px;
+}
+#demo-simple-select {
+  width: 85px;
+}
+.topRight {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
