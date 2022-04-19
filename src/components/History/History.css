@@ -1,6 +1,6 @@
 .history {
   display: flex;
-  width: fit-content;
+  width: 10%;
   padding: 1rem;
 }
 .center {
@@ -14,5 +14,6 @@ li {
   list-style-type: none;
 }
 hr {
-  margin-left: 2rem;
+  margin-left: auto;
+  color: #352d56;
 }

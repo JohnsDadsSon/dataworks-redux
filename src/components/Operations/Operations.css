@@ -1,21 +1,32 @@
 .operations {
   display: grid;
   width: auto;
-  gap: 1px;
+  gap: 5px;
 }
 .menuItemLayout {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   height: 70px;
   border: 2px;
-  border-style: solid;
+  border-style: none;
   width: 400px;
   padding: 3px;
   border-radius: 7px;
+  background-color: white;
+}
+.menuItemLayout:hover {
+  border-style: solid;
+  border-color: #352d56a0;
+  transition: 0ms;
+}
+.menuItemLayout:focus {
+  background-color: #352d56a0;
 }
 .title {
   font-weight: bold;
   padding: 2px;
+  font-size: 15pt;
 }
 .titleAndDesc {
   padding: 5px;
@@ -28,4 +39,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
+}
+.description {
+  font-size: 11pt;
 }

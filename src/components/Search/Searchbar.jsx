@@ -3,11 +3,16 @@ import "./Searchbar.css";
 import InputBase from "@mui/material/InputBase";
 import { Search } from "@mui/icons-material";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { sortMenu } from "../../features/sortSlice";
+import { useDispatch } from "react-redux";
+
 export const Searchbar = () => {
+  const dispatch = useDispatch();
   const [sort, setSort] = useState();
-  const handleChange = (event, newSort) => {
-    setSort(newSort);
+  const handleChange = () => {
+    dispatch(sortMenu());
   };
+
   return (
     <div className="searchAndSwitch">
       <div className="Search">

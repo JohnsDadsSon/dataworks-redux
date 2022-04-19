@@ -5,7 +5,7 @@ import { Searchbar } from "./components/Search/Searchbar";
 import { History } from "./components/History/History";
 import { Topbar } from "./components/Topbar/Topbar";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Topbar />
@@ -16,6 +16,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
