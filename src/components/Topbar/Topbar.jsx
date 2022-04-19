@@ -1,17 +1,19 @@
 import React from "react";
 import "./Topbar.css";
 import { InputLabel } from "@mui/material";
-import SelectInput from "@mui/material/Select/SelectInput";
 import { Select, FormControl, MenuItem } from "@mui/material";
-import { borderRadius } from "@mui/system";
 
-const Topbar = () => {
+export const Topbar = () => {
   return (
     <div>
       <div className="topbar">
         <div className="topbarWrapper">
           <div className="topLeft">
-            <img className="logo" src="./dataworkspng.png" />
+            <img
+              className="logo"
+              src="./dataworkspng.png"
+              alt="dataworks logo"
+            />
             <FormControl
               variant="filled"
               sx={{ backgroundColor: "#3e3e6e", borderRadius: 1 }}
@@ -65,5 +67,3 @@ const Topbar = () => {
     </div>
   );
 };
-
-export default Topbar;
