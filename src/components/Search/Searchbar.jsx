@@ -8,9 +8,15 @@ import { useDispatch } from "react-redux";
 
 export const Searchbar = () => {
   const dispatch = useDispatch();
-  const [sort, setSort] = useState();
+  const [toggle, setToggle] = useState("group");
   const handleChange = () => {
-    dispatch(sortMenu());
+    if (toggle == "AZ") {
+      dispatch(sortMenu("AZ"));
+      setToggle("group");
+    } else if (toggle == "group") {
+      dispatch(sortMenu("group"));
+      setToggle("AZ");
+    }
   };
 
   return (
@@ -27,7 +33,7 @@ export const Searchbar = () => {
       <div className="switchWrapper">
         <ToggleButtonGroup
           color="primary"
-          value={sort}
+          value={toggle}
           exclusive
           onChange={handleChange}
         >
