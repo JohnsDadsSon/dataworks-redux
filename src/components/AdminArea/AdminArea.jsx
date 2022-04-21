@@ -1,5 +1,5 @@
 import React from "react";
-import "./AdminArea.css";
+import "../SysConfigProjectManagement/SysConfigProjectManagement.css";
 
 import ButtonUnstyled from "@mui/base/ButtonUnstyled";
 import { selectMenuState } from "../../features/sortSlice";
@@ -11,7 +11,7 @@ export const AdminArea = () => {
   const sortState = useSelector(selectSortState);
   if (sortState === "group") {
     return (
-      <div className="Admin Area">
+      <div className="adminArea">
         <h3>ADMIN AREA</h3>
         {menuState
           .filter(function (ele) {

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./Searchbar.css";
 import InputBase from "@mui/material/InputBase";
 import { Search } from "@mui/icons-material";
-import { sortMenuAlphabet } from "../../features/sortSlice";
+import { sortMenuAlphabet, searchFilter } from "../../features/sortSlice";
 import { useDispatch } from "react-redux";
 import Radio from "@mui/material/Radio";
 import { useSelector } from "react-redux";
 import { selectSortState } from "../../features/sortSlice";
-
+import { menuitems } from "../../features/menuitems";
 import {
   FormControl,
   FormLabel,
@@ -29,6 +29,9 @@ export const Searchbar = () => {
     setButtonText(event.target.value);
     handleButtonText(value);
   };
+  function dispatchSearch(ele) {
+    dispatch(searchFilter(ele));
+  }
 
   const [buttonText, setButtonText] = useState("By Group");
   const [isError, setError] = useState(true);
@@ -61,6 +64,9 @@ export const Searchbar = () => {
         <InputBase
           placeholder="Menu Search"
           inputProps={{ "aria-label": "search" }}
+          onChange={(event) => {
+            dispatchSearch(event.target.value);
+          }}
         />
       </div>
       <div className="sortButton">

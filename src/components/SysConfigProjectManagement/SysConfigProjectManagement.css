@@ -1,16 +1,15 @@
 .sysConfigProjectManagement {
-  display: block;
+  display: grid;
   width: auto;
-  height: 700px;
-  gap: 5px;
-  justify-content: space-around;
+  height: 75vh;
 }
 .menuItemLayout {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   height: 70px;
   border: 2px;
-  border-style: none;
+  border-color: transparent;
+  border-style: solid;
   width: 400px;
   padding: 3px;
   border-radius: 7px;
@@ -19,7 +18,8 @@
 .menuItemLayout:hover {
   border-style: solid;
   border-color: #352d56a0;
-  transition: 0ms;
+  transition: transform 0.25s;
+  transform: scale(1.03);
 }
 .menuItemLayout:focus {
   background-color: #352d56a0;
@@ -46,8 +46,36 @@
 }
 
 .projectManagement {
-  display: block;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: stretch;
+}
+.sysConfig {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+}
+.operations {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+}
+h3 {
+  color: #352d56;
+  font-size: 16pt;
+  text-align: center;
+  display: flex;
+}
+.adminArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.operationsAZ {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, auto);
+  margin: 1rem;
 }

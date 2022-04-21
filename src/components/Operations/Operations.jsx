@@ -1,5 +1,5 @@
 import React from "react";
-import "./Operations.css";
+import "../SysConfigProjectManagement/SysConfigProjectManagement.css";
 
 import ButtonUnstyled from "@mui/base/ButtonUnstyled";
 import { selectMenuState } from "../../features/sortSlice";

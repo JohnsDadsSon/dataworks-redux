@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { menuitems } from "./menuitems";
 
-// const initialState = {
-
-// };
 export const sortSlice = createSlice({
   name: "sorting",
   initialState: { menuState: [...menuitems], sortState: "group" },
@@ -30,10 +27,18 @@ export const sortSlice = createSlice({
         }
       }
     },
+    // searchFilter: (state, action) => {
+    //   if (action.payload == "") {
+    //     return void { menuState: [""] };
+    //   } else if (menuitems.title.includes(action.payload)) {
+    //     alert("match");
+    //   }
+    // },
   },
 });
+
 export default sortSlice.reducer;
 
 export const selectMenuState = (state) => state.sorting.menuState;
 export const selectSortState = (state) => state.sorting.sortState;
-export const { sortMenuAlphabet } = sortSlice.actions;
+export const { sortMenuAlphabet, searchFilter } = sortSlice.actions;

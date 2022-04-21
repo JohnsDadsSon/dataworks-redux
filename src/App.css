@@ -4,8 +4,8 @@
 
 .mainPage {
   display: flex;
-  width: fit-content;
-  height: fit-content;
+  width: max-content;
+  height: max-content;
   gap: 3rem;
 }
 hr {

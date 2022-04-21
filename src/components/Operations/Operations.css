@@ -1,8 +1,7 @@
 .operations {
   display: grid;
   width: auto;
-  gap: 5px;
-  height: fit-content;
+  height: 70vh;
 }
 .menuItemLayout {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -10,7 +9,8 @@
   align-items: center;
   height: 70px;
   border: 2px;
-  border-style: none;
+  border-style: solid;
+  border-color: transparent;
   width: 400px;
   padding: 3px;
   border-radius: 7px;
@@ -19,7 +19,8 @@
 .menuItemLayout:hover {
   border-style: solid;
   border-color: #352d56a0;
-  transition: 0ms;
+  transition: transform 0.25s;
+  transform: scale(1.03);
 }
 .menuItemLayout:focus {
   background-color: #352d56a0;
