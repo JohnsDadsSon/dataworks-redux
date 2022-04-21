@@ -1,25 +1,27 @@
-.sysConfigProjectManagement {
-  display: block;
+.adminArea {
+  display: flex;
   width: auto;
-  height: 700px;
   gap: 5px;
-  justify-content: space-around;
 }
 .menuItemLayout {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
+  align-items: center;
   height: 70px;
   border: 2px;
-  border-style: none;
+  border-color: transparent;
+  border-style: solid;
   width: 400px;
-  padding: 3px;
+  padding: 0px;
   border-radius: 7px;
   background-color: white;
 }
+
 .menuItemLayout:hover {
   border-style: solid;
   border-color: #352d56a0;
-  transition: 0ms;
+  transition: transform 0.25s;
+  transform: scale(1.03);
 }
 .menuItemLayout:focus {
   background-color: #352d56a0;
@@ -41,13 +43,7 @@
   justify-content: left;
   align-items: center;
 }
+
 .description {
   font-size: 11pt;
-}
-
-.projectManagement {
-  display: block;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
 }

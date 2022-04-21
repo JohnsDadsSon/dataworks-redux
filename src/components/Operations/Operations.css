@@ -44,3 +44,14 @@
 .description {
   font-size: 11pt;
 }
+.operationsAZ {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, auto);
+  margin: 1rem;
+}
+h3 {
+  color: #352d56;
+  font-size: 16pt;
+  text-align: center;
+}

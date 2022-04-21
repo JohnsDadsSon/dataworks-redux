@@ -5,6 +5,7 @@
 .mainPage {
   display: flex;
   width: fit-content;
+  height: fit-content;
   gap: 3rem;
 }
 hr {

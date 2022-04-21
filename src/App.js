@@ -5,6 +5,7 @@ import { History } from "./components/History/History";
 import { Topbar } from "./components/Topbar/Topbar";
 
 import { SysConfigProjectManagement } from "./components/SysConfigProjectManagement/SysConfigProjectManagement";
+import { AdminArea } from "./components/AdminArea/AdminArea";
 const App = (props) => {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ const App = (props) => {
         <hr></hr>
         <Operations />
         <SysConfigProjectManagement />
+        <AdminArea />
       </div>
     </div>
   );
