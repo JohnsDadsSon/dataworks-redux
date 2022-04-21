@@ -6,7 +6,8 @@ import AssessmentTwoToneIcon from "@mui/icons-material/AssessmentTwoTone";
 import DataThresholdingTwoToneIcon from "@mui/icons-material/DataThresholdingTwoTone";
 import MilitaryTechTwoToneIcon from "@mui/icons-material/MilitaryTechTwoTone";
 import SmartToyTwoToneIcon from "@mui/icons-material/SmartToyTwoTone";
-
+import SettingsInputComponentTwoToneIcon from "@mui/icons-material/SettingsInputComponentTwoTone";
+import IntegrationInstructionsTwoToneIcon from "@mui/icons-material/IntegrationInstructionsTwoTone";
 export const menuitems = [
   {
     title: "System Status",
@@ -59,5 +60,65 @@ export const menuitems = [
     description: "This is the description for AI lab",
     icon: <SmartToyTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+  },
+  {
+    title: "Core Engine Controls",
+    description: "This is the description for core engine controls",
+    icon: (
+      <SettingsInputComponentTwoToneIcon
+        sx={{ color: "#352d56", fontSize: 60 }}
+      />
+    ),
+    catagory: "System Configuration",
+  },
+  {
+    title: "Service Integration",
+    description: "This is the description for Service Integration",
+    icon: (
+      <IntegrationInstructionsTwoToneIcon
+        sx={{ color: "#352d56", fontSize: 60 }}
+      />
+    ),
+    catagory: "System Configuration",
+  },
+  {
+    title: "Projects",
+    description: "This is the description for Projects",
+    icon: (
+      <IntegrationInstructionsTwoToneIcon
+        sx={{ color: "#352d56", fontSize: 60 }}
+      />
+    ),
+    catagory: "Project Management",
+  },
+  {
+    title: "Workflows",
+    description: "This is the description for workflows",
+    icon: (
+      <IntegrationInstructionsTwoToneIcon
+        sx={{ color: "#352d56", fontSize: 60 }}
+      />
+    ),
+    catagory: "Project Management",
+  },
+  {
+    title: "To-Do",
+    description: "This is the description for To-Do",
+    icon: (
+      <IntegrationInstructionsTwoToneIcon
+        sx={{ color: "#352d56", fontSize: 60 }}
+      />
+    ),
+    catagory: "Project Management",
+  },
+  {
+    title: "Governance",
+    description: "This is the description for governance",
+    icon: (
+      <IntegrationInstructionsTwoToneIcon
+        sx={{ color: "#352d56", fontSize: 60 }}
+      />
+    ),
+    catagory: "Project Management",
   },
 ];

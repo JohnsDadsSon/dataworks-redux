@@ -4,6 +4,11 @@
 
 .mainPage {
   display: flex;
-  width: auto;
-  gap: 1rem;
+  width: fit-content;
+  gap: 3rem;
+}
+hr {
+  margin-left: auto;
+  width: fit-content;
+  color: #352d56;
 }

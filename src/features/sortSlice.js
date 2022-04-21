@@ -1,21 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { menuitems } from "./menuitems";
 
-const initialState = {
-  menuState: [...menuitems],
-};
+// const initialState = {
+
+// };
 export const sortSlice = createSlice({
   name: "sorting",
-  initialState,
+  initialState: { menuState: [...menuitems], sortState: "group" },
   reducers: {
-    sortMenu: (state, action) => {
-      if (action.payload == "AZ") {
+    sortMenuAlphabet: (state, action) => {
+      if (action.payload === "az") {
+        state.sortState = "az";
         return void {
           menuState: [
             ...state.menuState.sort((a, b) => a.title.localeCompare(b.title)),
           ],
         };
-      } else if (action.payload == "group") {
+      } else if (action.payload === "group") {
+        state.sortState = "group";
         return void {
           menuState: [
             ...state.menuState.sort((a, b) => b.title.localeCompare(a.title)),
@@ -29,5 +31,5 @@ export const sortSlice = createSlice({
 export default sortSlice.reducer;
 
 export const selectMenuState = (state) => state.sorting.menuState;
-
-export const { sortMenu } = sortSlice.actions;
+export const selectSortState = (state) => state.sorting.sortState;
+export const { sortMenuAlphabet } = sortSlice.actions;

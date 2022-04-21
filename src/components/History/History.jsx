@@ -13,7 +13,6 @@ export const History = () => {
         <li>Scheduler</li>
         <li>Reports</li>
       </div>
-      <hr></hr>
     </div>
   );
 };
