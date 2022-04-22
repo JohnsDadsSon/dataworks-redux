@@ -7,6 +7,7 @@ export const sortSlice = createSlice({
     menuState: [...menuitems],
     sortState: "group",
     searchTerm: "",
+    historyClicks: [""],
   },
   reducers: {
     sortMenuAlphabet: (state, action) => {
@@ -34,6 +35,9 @@ export const sortSlice = createSlice({
     searchFilter: (state, action) => {
       state.searchTerm = action.payload;
     },
+    historyClicks: (state, action) => {
+      state.historyClicks.push(action.payload);
+    },
   },
 });
 
@@ -42,4 +46,6 @@ export default sortSlice.reducer;
 export const selectMenuState = (state) => state.sorting.menuState;
 export const selectSortState = (state) => state.sorting.sortState;
 export const selectSearchTerm = (state) => state.sorting.searchTerm;
-export const { sortMenuAlphabet, searchFilter } = sortSlice.actions;
+export const selectHistoryClicks = (state) => state.sorting.historyClicks;
+export const { sortMenuAlphabet, searchFilter, historyClicks } =
+  sortSlice.actions;

@@ -6,11 +6,16 @@ import { selectMenuState } from "../../features/sortSlice";
 import { selectSortState } from "../../features/sortSlice";
 import { useSelector } from "react-redux";
 import { selectSearchTerm } from "../../features/sortSlice";
-
+import { historyClicks } from "../../features/sortSlice";
+import { useDispatch } from "react-redux";
 export const Operations = () => {
   const menuState = useSelector(selectMenuState);
   const sortState = useSelector(selectSortState);
   const searchTerm = useSelector(selectSearchTerm);
+  const dispatch = useDispatch();
+  const handleHistory = (event) => {
+    dispatch(historyClicks(event.target.value));
+  };
   if (sortState === "group") {
     return (
       <div className="operations">
@@ -32,7 +37,11 @@ export const Operations = () => {
             return (
               <div className="operations">
                 <div>
-                  <ButtonUnstyled className="menuItemLayout">
+                  <ButtonUnstyled
+                    onFocus={handleHistory}
+                    className="menuItemLayout"
+                    value={item.title}
+                  >
                     <div className="icon">{item.icon}</div>
                     <div className="titleAndDesc">
                       <div className="title">{item.title}</div>
@@ -62,7 +71,11 @@ export const Operations = () => {
             return (
               <div className="operations">
                 <div>
-                  <ButtonUnstyled className="menuItemLayout">
+                  <ButtonUnstyled
+                    onFocus={handleHistory}
+                    value={item.title}
+                    className="menuItemLayout"
+                  >
                     <div className="icon">{item.icon}</div>
                     <div className="titleAndDesc">
                       <div className="title">{item.title}</div>

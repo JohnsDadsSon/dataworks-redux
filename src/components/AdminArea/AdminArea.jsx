@@ -1,6 +1,7 @@
 import React from "react";
 import "../SysConfigProjectManagement/SysConfigProjectManagement.css";
-
+import { historyClicks } from "../../features/sortSlice";
+import { useDispatch } from "react-redux";
 import ButtonUnstyled from "@mui/base/ButtonUnstyled";
 import { selectMenuState } from "../../features/sortSlice";
 import { selectSortState } from "../../features/sortSlice";
@@ -11,6 +12,10 @@ export const AdminArea = () => {
   const menuState = useSelector(selectMenuState);
   const sortState = useSelector(selectSortState);
   const searchTerm = useSelector(selectSearchTerm);
+  const dispatch = useDispatch();
+  const handleHistory = (event) => {
+    dispatch(historyClicks(event.target.value));
+  };
   if (sortState === "group") {
     return (
       <div className="adminArea">
@@ -30,7 +35,11 @@ export const AdminArea = () => {
           })
           .map((item) => {
             return (
-              <ButtonUnstyled className="menuItemLayout">
+              <ButtonUnstyled
+                onFocus={handleHistory}
+                value={item.title}
+                className="menuItemLayout"
+              >
                 <div className="icon">{item.icon}</div>
                 <div className="titleAndDesc">
                   <div className="title">{item.title}</div>

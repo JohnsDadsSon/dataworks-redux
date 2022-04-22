@@ -1,17 +1,21 @@
 import React from "react";
 import "./History.css";
+import { useSelector } from "react-redux";
+import { selectHistoryClicks } from "../../features/sortSlice";
 
 export const History = () => {
+  const historyClicks = useSelector(selectHistoryClicks);
   return (
     <div className="history">
       <div className="center">
-        <h3>HISTORY</h3>
-
-        <li>User Management</li>
-        <li>Engine Control</li>
-        <li>Billing</li>
-        <li>Scheduler</li>
-        <li>Reports</li>
+        <h3> HISTORY</h3>
+        {historyClicks.map((item) => {
+          if (historyClicks == "") {
+            return "Nothing to see!";
+          } else {
+            return <li>{item}</li>;
+          }
+        })}
       </div>
     </div>
   );
