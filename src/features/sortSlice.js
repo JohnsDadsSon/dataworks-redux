@@ -3,7 +3,11 @@ import { menuitems } from "./menuitems";
 
 export const sortSlice = createSlice({
   name: "sorting",
-  initialState: { menuState: [...menuitems], sortState: "group" },
+  initialState: {
+    menuState: [...menuitems],
+    sortState: "group",
+    searchTerm: "",
+  },
   reducers: {
     sortMenuAlphabet: (state, action) => {
       if (action.payload === "group") {
@@ -27,13 +31,9 @@ export const sortSlice = createSlice({
         }
       }
     },
-    // searchFilter: (state, action) => {
-    //   if (action.payload == "") {
-    //     return void { menuState: [""] };
-    //   } else if (menuitems.title.includes(action.payload)) {
-    //     alert("match");
-    //   }
-    // },
+    searchFilter: (state, action) => {
+      state.searchTerm = action.payload;
+    },
   },
 });
 
@@ -41,4 +41,5 @@ export default sortSlice.reducer;
 
 export const selectMenuState = (state) => state.sorting.menuState;
 export const selectSortState = (state) => state.sorting.sortState;
+export const selectSearchTerm = (state) => state.sorting.searchTerm;
 export const { sortMenuAlphabet, searchFilter } = sortSlice.actions;

@@ -1,11 +1,15 @@
 .history {
   display: flex;
-  width: 10%;
+  width: 8vw;
   padding: 1rem;
+  text-align: center;
+  justify-content: center;
 }
 .center {
-  text-align: left;
+  text-align: center;
   line-height: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 ul {
   list-style-type: none;
@@ -16,4 +20,8 @@ li {
 hr {
   margin-left: auto;
   color: #352d56;
+}
+h3 {
+  justify-content: center;
+  text-align: center;
 }

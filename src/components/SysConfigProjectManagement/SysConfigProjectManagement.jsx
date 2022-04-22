@@ -5,10 +5,12 @@ import ButtonUnstyled from "@mui/base/ButtonUnstyled";
 import { selectMenuState } from "../../features/sortSlice";
 import { selectSortState } from "../../features/sortSlice";
 import { useSelector } from "react-redux";
+import { selectSearchTerm } from "../../features/sortSlice";
 
 export const SysConfigProjectManagement = () => {
   const menuState = useSelector(selectMenuState);
   const sortState = useSelector(selectSortState);
+  const searchTerm = useSelector(selectSearchTerm);
   if (sortState === "group") {
     return (
       <div>
@@ -16,6 +18,15 @@ export const SysConfigProjectManagement = () => {
           <div className="sysConfig">
             <h3>SYSTEM CONFIGURATION</h3>
             {menuState
+              .filter((val) => {
+                if (searchTerm == "") {
+                  return val;
+                } else if (
+                  val.title.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
               .filter(function (ele) {
                 return ele.catagory === "System Configuration";
               })
@@ -36,6 +47,15 @@ export const SysConfigProjectManagement = () => {
             <br></br>
             <h3>PROJECT MANAGEMENT</h3>
             {menuState
+              .filter((val) => {
+                if (searchTerm == "") {
+                  return val;
+                } else if (
+                  val.title.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
               .filter(function (ele) {
                 return ele.catagory === "Project Management";
               })

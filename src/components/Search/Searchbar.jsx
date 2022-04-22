@@ -8,6 +8,7 @@ import Radio from "@mui/material/Radio";
 import { useSelector } from "react-redux";
 import { selectSortState } from "../../features/sortSlice";
 import { menuitems } from "../../features/menuitems";
+import { selectSearchTerm } from "../../features/sortSlice";
 import {
   FormControl,
   FormLabel,
