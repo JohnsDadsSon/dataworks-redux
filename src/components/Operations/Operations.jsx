@@ -19,23 +19,23 @@ export const Operations = () => {
   if (sortState === "group") {
     return (
       <div className="operations">
-        <h3>OPERATIONS GROUP</h3>
-        {menuState
-          .filter((val) => {
-            if (searchTerm == "") {
-              return val;
-            } else if (
-              val.title.toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-              return val;
-            }
-          })
-          .filter(function (ele) {
-            return ele.catagory === "Operations";
-          })
-          .map((item) => {
-            return (
-              <div className="operations">
+        <h3 className="titleHead">OPERATIONS GROUP</h3>
+        <div className="operations">
+          {menuState
+            .filter((val) => {
+              if (searchTerm == "") {
+                return val;
+              } else if (
+                val.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .filter(function (ele) {
+              return ele.catagory === "Operations";
+            })
+            .map((item) => {
+              return (
                 <div>
                   <ButtonUnstyled
                     onFocus={handleHistory}
@@ -49,9 +49,9 @@ export const Operations = () => {
                     </div>
                   </ButtonUnstyled>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </div>
     );
   } else {

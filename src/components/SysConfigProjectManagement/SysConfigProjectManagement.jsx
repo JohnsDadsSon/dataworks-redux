@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SysConfigProjectManagement.css";
 import { historyClicks } from "../../features/sortSlice";
 import { useDispatch } from "react-redux";
@@ -16,74 +16,73 @@ export const SysConfigProjectManagement = () => {
   const handleHistory = (event) => {
     dispatch(historyClicks(event.target.value));
   };
+
   if (sortState === "group") {
     return (
-      <div>
-        <div className="sysConfigProjectManagement">
-          <div className="sysConfig">
-            <h3>SYSTEM CONFIGURATION</h3>
-            {menuState
-              .filter((val) => {
-                if (searchTerm == "") {
-                  return val;
-                } else if (
-                  val.title.toLowerCase().includes(searchTerm.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .filter(function (ele) {
-                return ele.catagory === "System Configuration";
-              })
-              .map((item) => {
-                return (
-                  <ButtonUnstyled
-                    onFocus={handleHistory}
-                    value={item.title}
-                    className="menuItemLayout"
-                  >
-                    <div className="icon">{item.icon}</div>
-                    <div className="titleAndDesc">
-                      <div className="title">{item.title}</div>
-                      <div className="description">{item.description}</div>
-                    </div>
-                  </ButtonUnstyled>
-                );
-              })}
-          </div>
+      <div className="sysConfigProjectManagement">
+        <h3 className="titleHead">SYSTEM CONFIGURATION</h3>
+        <div className="sysConfig">
+          {menuState
+            .filter((val) => {
+              if (searchTerm == "") {
+                return val;
+              } else if (
+                val.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .filter(function (ele) {
+              return ele.catagory === "System Configuration";
+            })
+            .map((item) => {
+              return (
+                <ButtonUnstyled
+                  onFocus={handleHistory}
+                  value={item.title}
+                  className="menuItemLayout"
+                >
+                  <div className="icon">{item.icon}</div>
+                  <div className="titleAndDesc">
+                    <div className="title">{item.title}</div>
+                    <div className="description">{item.description}</div>
+                  </div>
+                </ButtonUnstyled>
+              );
+            })}
+        </div>
+        <br></br>
 
-          <div className="projectManagement">
-            <br></br>
-            <h3>PROJECT MANAGEMENT</h3>
-            {menuState
-              .filter((val) => {
-                if (searchTerm == "") {
-                  return val;
-                } else if (
-                  val.title.toLowerCase().includes(searchTerm.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .filter(function (ele) {
-                return ele.catagory === "Project Management";
-              })
-              .map((item) => {
-                return (
-                  <ButtonUnstyled
-                    onFocus={handleHistory}
-                    value={item.title}
-                    className="menuItemLayout"
-                  >
-                    <div className="icon">{item.icon}</div>
-                    <div className="titleAndDesc">
-                      <div className="title">{item.title}</div>
-                      <div className="description">{item.description}</div>
-                    </div>
-                  </ButtonUnstyled>
-                );
-              })}
-          </div>
+        <h3 className="titleHead">PROJECT MANAGEMENT</h3>
+        <div className="projectManagement">
+          {menuState
+            .filter((val) => {
+              if (searchTerm == "") {
+                return val;
+              } else if (
+                val.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .filter(function (ele) {
+              return ele.catagory === "Project Management";
+            })
+            .map((item) => {
+              return (
+                <ButtonUnstyled
+                  onFocus={handleHistory}
+                  value={item.title}
+                  className="menuItemLayout"
+                >
+                  <div className="icon">{item.icon}</div>
+                  <div className="titleAndDesc">
+                    <div className="title">{item.title}</div>
+                    <div className="description">{item.description}</div>
+                  </div>
+                </ButtonUnstyled>
+              );
+            })}
         </div>
       </div>
     );

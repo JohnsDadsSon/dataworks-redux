@@ -36,7 +36,19 @@ export const sortSlice = createSlice({
       state.searchTerm = action.payload;
     },
     historyClicks: (state, action) => {
-      state.historyClicks.push(action.payload);
+      if (state.historyClicks.includes(action.payload)) {
+        // const index = state.historyClicks.findIndex(
+        //   ({ title }) => title === action.payload
+        // );
+        // return void {
+        //   historyClicks: [...state.historyClicks.splice(index, 1)],
+        // };
+      } else {
+        state.historyClicks.push(action.payload);
+      }
+    },
+    clearHistory: (state) => {
+      state.historyClicks = [""];
     },
   },
 });
@@ -47,5 +59,5 @@ export const selectMenuState = (state) => state.sorting.menuState;
 export const selectSortState = (state) => state.sorting.sortState;
 export const selectSearchTerm = (state) => state.sorting.searchTerm;
 export const selectHistoryClicks = (state) => state.sorting.historyClicks;
-export const { sortMenuAlphabet, searchFilter, historyClicks } =
+export const { sortMenuAlphabet, searchFilter, historyClicks, clearHistory } =
   sortSlice.actions;
