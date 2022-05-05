@@ -18,13 +18,46 @@
 }
 .menuItemLayout:hover {
   border-style: solid;
-  border-color: #352d56a0;
+  border-color: #352d56;
   transition: transform 0.25s;
   transform: scale(1.03);
 }
 .menuItemLayout:focus {
-  background-color: #352d56a0;
+  background-color: #352d56;
+  color: white;
 }
+.menuItemLayout:focus > .icon {
+  filter: invert(0.5);
+  filter: brightness(10);
+}
+.menuItemLayoutHighlighted {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  height: 70px;
+  border: 2px;
+  border-color: transparent;
+  border-style: solid;
+  width: 400px;
+  padding: 3px;
+  border-radius: 7px;
+  background-color: #faab2c;
+  color: white;
+}
+
+.menuItemLayoutHighlighted:hover {
+  border-style: solid;
+  border-color: #faab2ca0;
+  transition: transform 0.25s;
+  transform: scale(1.03);
+}
+.menuItemLayoutHighlighted:focus {
+  background-color: #352d56;
+  color: white;
+}
+.menuItemLayoutHighlighted:focus > .icon {
+  filter: brightness(10);
+}
+
 .title {
   font-weight: bold;
   padding: 2px;

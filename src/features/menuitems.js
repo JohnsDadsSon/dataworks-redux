@@ -29,30 +29,35 @@ export const menuitems = [
       <SettingsSuggestTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />
     ),
     catagory: "Operations",
+    key: 0,
   },
   {
     title: "Workflows",
     description: "This is the description for workflows",
     icon: <AccountTreeTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+    key: 1,
   },
   {
     title: "Scheduler",
     description: "This is the description for scheduler",
     icon: <CalendarMonthTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+    key: 2,
   },
   {
     title: "Proxy Management",
     description: "This is the description for proxy Management",
     icon: <DnsTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+    key: 3,
   },
   {
     title: "Reporting",
     description: "This is the description for reporting",
     icon: <AssessmentTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+    key: 4,
   },
   {
     title: "Data Management",
@@ -61,18 +66,21 @@ export const menuitems = [
       <DataThresholdingTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />
     ),
     catagory: "Operations",
+    key: 5,
   },
   {
     title: "Data Quality Engine",
     description: "This is the description for data quality engine",
     icon: <MilitaryTechTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+    key: 6,
   },
   {
     title: "AI Lab",
     description: "This is the description for AI lab",
     icon: <SmartToyTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Operations",
+    key: 7,
   },
   {
     title: "Core Engine Controls",
@@ -83,6 +91,7 @@ export const menuitems = [
       />
     ),
     catagory: "System Configuration",
+    key: 8,
   },
   {
     title: "Service Integration",
@@ -93,24 +102,28 @@ export const menuitems = [
       />
     ),
     catagory: "System Configuration",
+    key: 9,
   },
   {
     title: "Projects",
     description: "This is the description for Projects",
     icon: <FolderCopyTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Project Management",
+    key: 10,
   },
   {
     title: "Workflows",
     description: "This is the description for workflows",
     icon: <AccountTreeTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Project Management",
+    key: 11,
   },
   {
     title: "To-Do",
     description: "This is the description for To-Do",
     icon: <ListAltTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Project Management",
+    key: 12,
   },
   {
     title: "Governance",
@@ -119,36 +132,42 @@ export const menuitems = [
       <AssuredWorkloadTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />
     ),
     catagory: "Project Management",
+    key: 13,
   },
   {
     title: "User Management",
     description: "This is the description for user management",
     icon: <AccountCircleTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 14,
   },
   {
     title: "Financial Control",
     description: "This is the description for financial control",
     icon: <SavingsTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 15,
   },
   {
     title: "Cloud Settings",
     description: "This is the description for cloud Settings",
     icon: <CloudTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 16,
   },
   {
     title: "Infrastructure Control",
     description: "This is the description for infrastructure control",
     icon: <EngineeringTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 17,
   },
   {
     title: "Support Centre",
     description: "This is the description for support centre",
     icon: <SupportAgentTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 18,
   },
   {
     title: "Training",
@@ -157,6 +176,7 @@ export const menuitems = [
       <CastForEducationTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />
     ),
     catagory: "Admin Area",
+    key: 19,
   },
   {
     title: "Documentation",
@@ -165,17 +185,20 @@ export const menuitems = [
       <DocumentScannerTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />
     ),
     catagory: "Admin Area",
+    key: 20,
   },
   {
     title: "Sandbox Playground",
     description: "This is the description for sandbox playground",
     icon: <TakeoutDiningTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 21,
   },
   {
     title: "Other Resources",
     description: "This is the description for other resources",
     icon: <SearchTwoToneIcon sx={{ color: "#352d56", fontSize: 60 }} />,
     catagory: "Admin Area",
+    key: 22,
   },
 ];

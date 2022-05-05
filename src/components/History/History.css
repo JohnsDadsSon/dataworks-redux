@@ -1,9 +1,10 @@
 .history {
   display: flex;
-  width: 8vw;
-  padding: 1rem;
+  width: 10vw;
+
   text-align: center;
   justify-content: center;
+  margin-left: 3rem;
 }
 .center {
   text-align: center;

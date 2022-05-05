@@ -7,7 +7,8 @@ export const sortSlice = createSlice({
     menuState: [...menuitems],
     sortState: "group",
     searchTerm: "",
-    historyClicks: [""],
+    historyClicks: [],
+    highlighted: [],
   },
   reducers: {
     sortMenuAlphabet: (state, action) => {
@@ -37,15 +38,14 @@ export const sortSlice = createSlice({
     },
     historyClicks: (state, action) => {
       if (state.historyClicks.includes(action.payload)) {
-        // const index = state.historyClicks.findIndex(
-        //   ({ title }) => title === action.payload
-        // );
-        // return void {
-        //   historyClicks: [...state.historyClicks.splice(index, 1)],
-        // };
       } else {
-        state.historyClicks.push(action.payload);
+        return void {
+          historyClicks: [state.historyClicks.splice(0, 0, action.payload)],
+        };
       }
+    },
+    historyItemClick: (state, action) => {
+      state.highlighted = action.payload;
     },
     clearHistory: (state) => {
       state.historyClicks = [""];
@@ -59,5 +59,11 @@ export const selectMenuState = (state) => state.sorting.menuState;
 export const selectSortState = (state) => state.sorting.sortState;
 export const selectSearchTerm = (state) => state.sorting.searchTerm;
 export const selectHistoryClicks = (state) => state.sorting.historyClicks;
-export const { sortMenuAlphabet, searchFilter, historyClicks, clearHistory } =
-  sortSlice.actions;
+export const selectHighlighted = (state) => state.sorting.highlighted;
+export const {
+  sortMenuAlphabet,
+  searchFilter,
+  historyClicks,
+  clearHistory,
+  historyItemClick,
+} = sortSlice.actions;
