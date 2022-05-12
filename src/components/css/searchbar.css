@@ -1,6 +1,6 @@
 .SearchIconWrapper {
-  display: flex;
-}
+  display: flex; }
+
 .Search {
   border-style: solid;
   border-width: 2px;
@@ -12,24 +12,24 @@
   align-items: center;
   justify-content: left;
   padding: 2px;
-  flex: 1;
-}
+  flex: 1; }
+
 #searchIcon {
-  color: #352d56;
-}
+  color: #352d56; }
+
 .searchAndSwitch {
   display: flex;
-  width: 100%;
-}
+  width: 100%; }
 
 .switchWrapper {
   margin: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
+
 .sortButton {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
+
+/*# sourceMappingURL=searchbar.css.map */

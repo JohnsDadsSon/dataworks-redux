@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Searchbar.css";
+import "../css/searchbar.css";
 import InputBase from "@mui/material/InputBase";
 import { Search } from "@mui/icons-material";
 import { sortMenuAlphabet, searchFilter } from "../../features/sortSlice";

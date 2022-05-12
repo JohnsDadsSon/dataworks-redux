@@ -1,5 +1,5 @@
 import React from "react";
-import "../SysConfigProjectManagement/SysConfigProjectManagement.css";
+import "../css/menuitems.css";
 import { sortMenuAlphabet, searchFilter } from "../../features/sortSlice";
 import ButtonUnstyled from "@mui/base/ButtonUnstyled";
 import { selectMenuState } from "../../features/sortSlice";

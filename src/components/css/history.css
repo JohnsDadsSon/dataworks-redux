@@ -1,28 +1,28 @@
 .history {
   display: flex;
   width: 10vw;
-
   text-align: center;
   justify-content: center;
-  margin-left: 3rem;
-}
+  margin-left: 3rem; }
+
 .center {
   text-align: center;
   line-height: 2rem;
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column; }
+
 ul {
-  list-style-type: none;
-}
+  list-style-type: none; }
+
 li {
-  list-style-type: none;
-}
+  list-style-type: none; }
+
 hr {
   margin-left: auto;
-  color: #352d56;
-}
+  color: #352d56; }
+
 h3 {
   justify-content: center;
-  text-align: center;
-}
+  text-align: center; }
+
+/*# sourceMappingURL=history.css.map */

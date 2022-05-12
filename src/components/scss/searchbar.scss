@@ -1,0 +1,36 @@
+$dataworksPurple: #352d56;
+.SearchIconWrapper {
+  display: flex;
+}
+.Search {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #352d5660;
+  gap: 2px;
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  justify-content: left;
+  padding: 2px;
+  flex: 1;
+}
+#searchIcon {
+  color: $dataworksPurple;
+}
+.searchAndSwitch {
+  display: flex;
+  width: 100%;
+}
+
+.switchWrapper {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sortButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   width: auto;
-  height: 75vh;
-}
+  height: 75vh; }
+
 .menuItemLayout {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -14,22 +14,22 @@
   width: 400px;
   padding: 3px;
   border-radius: 7px;
-  background-color: white;
-}
+  background-color: white; }
+
 .menuItemLayout:hover {
   border-style: solid;
   border-color: #352d56;
   transition: transform 0.25s;
-  transform: scale(1.03);
-}
+  transform: scale(1.03); }
+
 .menuItemLayout:focus {
   background-color: #352d56;
-  color: white;
-}
+  color: white; }
+
 .menuItemLayout:focus > .icon {
   filter: invert(0.5);
-  filter: brightness(10);
-}
+  filter: brightness(10); }
+
 .menuItemLayoutHighlighted {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -41,82 +41,80 @@
   padding: 3px;
   border-radius: 7px;
   background-color: #faab2c;
-  color: white;
-}
+  color: white; }
 
 .menuItemLayoutHighlighted:hover {
   border-style: solid;
   border-color: #faab2ca0;
   transition: transform 0.25s;
-  transform: scale(1.03);
-}
+  transform: scale(1.03); }
+
 .menuItemLayoutHighlighted:focus {
   background-color: #352d56;
-  color: white;
-}
+  color: white; }
+
 .menuItemLayoutHighlighted:focus > .icon {
-  filter: brightness(10);
-}
+  filter: brightness(10); }
 
 .title {
   font-weight: bold;
   padding: 2px;
-  font-size: 15pt;
-}
+  font-size: 15pt; }
+
 .titleAndDesc {
   padding: 5px;
   align-items: center;
   justify-content: center;
   display: grid;
-  width: 100%;
-}
+  width: 100%; }
+
 .icon {
   display: flex;
   justify-content: left;
-  align-items: center;
-}
+  align-items: center; }
+
 .description {
-  font-size: 11pt;
-}
+  font-size: 11pt; }
 
 .projectManagement {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  flex: 1;
-}
+  flex: 1; }
+
 .sysConfig {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  flex: 0.6;
-}
+  flex: 0.6; }
+
 .operations {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   flex: 1;
-  width: max-content;
-}
+  width: max-content; }
+
 h3 {
-  color: #352d56;
-}
+  color: #352d56; }
+
 .titleHead {
   color: #352d56;
   font-size: 16pt;
   text-align: center;
   display: grid;
-  min-width: 400px;
-}
+  min-width: 400px; }
+
 .adminArea {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  flex: 1;
-}
+  flex: 1; }
+
 .operationsAZ {
   display: grid;
   grid-gap: 50px;
   grid-template-columns: repeat(3, auto);
-  margin: 1rem;
-}
+  margin: 1rem; }
+
+/*# sourceMappingURL=menuitems.css.map */

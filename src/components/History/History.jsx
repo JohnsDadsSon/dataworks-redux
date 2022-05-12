@@ -1,5 +1,5 @@
 import React from "react";
-import "./History.css";
+import "../css/history.css";
 import { useSelector } from "react-redux";
 import { selectHistoryClicks } from "../../features/sortSlice";
 import { Button } from "@mui/material";
