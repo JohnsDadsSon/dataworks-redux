@@ -59,12 +59,14 @@
 .title {
   font-weight: bold;
   padding: 2px;
-  font-size: 15pt; }
+  font-size: 15pt;
+  text-align: left; }
 
 .titleAndDesc {
   padding: 5px;
-  align-items: center;
-  justify-content: center;
+  padding-left: 15px;
+  align-items: left;
+  justify-content: left;
   display: grid;
   width: 100%; }
 

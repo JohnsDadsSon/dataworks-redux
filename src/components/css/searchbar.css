@@ -10,12 +10,13 @@
   display: flex;
   margin: 1rem;
   align-items: center;
-  justify-content: left;
+  flex-direction: row;
   padding: 2px;
   flex: 1; }
 
 #searchIcon {
-  color: #352d56; }
+  color: #352d56;
+  padding: 5px; }
 
 .searchAndSwitch {
   display: flex;

@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { selectSortState } from "../../features/sortSlice";
 import { menuitems } from "../../features/menuitems";
 import { selectSearchTerm } from "../../features/sortSlice";
+import ClearIcon from "@mui/icons-material/Clear";
 import {
   FormControl,
   FormLabel,
@@ -20,40 +21,18 @@ import {
 export const Searchbar = () => {
   const sortState = useSelector(selectSortState);
   const dispatch = useDispatch();
-  const [value, setValue] = useState("group");
-  function dispatchSort() {
-    dispatch(sortMenuAlphabet(value));
-    handleButtonText();
+  function dispatchSort(event) {
+    dispatch(sortMenuAlphabet(event.target.value));
   }
   const handleChange = (event) => {
-    setValue(event.target.value);
-    setButtonText(event.target.value);
-    handleButtonText(value);
+    dispatch(sortMenuAlphabet(event.target.value));
   };
   function dispatchSearch(ele) {
     dispatch(searchFilter(ele));
   }
-
-  const [buttonText, setButtonText] = useState("By Group");
-  const [isError, setError] = useState(true);
-  const handleButtonText = (event) => {
-    if (sortState === "group") {
-      if (value === "group") {
-        setError(false);
-        setButtonText("A-Z");
-      } else {
-        setError(true);
-      }
-    } else if (sortState === "az") {
-      if (value === "az") {
-        setButtonText("By Group");
-        setError(false);
-      } else {
-        setError(true);
-      }
-    } else if (sortState === "za") {
-      setError(false);
-    }
+  const clearSearch = () => {
+    document.getElementById("menuSearch").value = "";
+    dispatchSearch("");
   };
 
   return (
@@ -63,23 +42,19 @@ export const Searchbar = () => {
           <Search id="searchIcon" />
         </div>
         <InputBase
+          id="menuSearch"
           placeholder="Menu Search"
+          fullWidth
           inputProps={{ "aria-label": "search" }}
           onChange={(event) => {
             dispatchSearch(event.target.value);
           }}
         />
-      </div>
-      <div className="sortButton">
-        <Button
-          onClick={dispatchSort}
-          variant="contained"
-          disabled={isError}
-          sx={{ backgroundColor: "#352d56" }}
-        >
-          Sort {buttonText}
+        <Button id="clearButton" onClick={clearSearch}>
+          <ClearIcon sx={{ color: "#352d56" }} />
         </Button>
       </div>
+      <div className="sortButton"></div>
       <div className="switchWrapper">
         <FormControl>
           <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
@@ -87,8 +62,8 @@ export const Searchbar = () => {
             row
             aria-labelledby="demo-controlled-radio-buttons-group"
             name="controlled-radio-buttons-group"
-            value={value}
             onChange={handleChange}
+            defaultValue="group"
           >
             <FormControlLabel value="group" control={<Radio />} label="Group" />
             <FormControlLabel value="az" control={<Radio />} label="A-Z" />

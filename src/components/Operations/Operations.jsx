@@ -2,6 +2,7 @@ import React from "react";
 import "../css/menuitems.css";
 import { sortMenuAlphabet, searchFilter } from "../../features/sortSlice";
 import ButtonUnstyled from "@mui/base/ButtonUnstyled";
+import { Button } from "@mui/material";
 import { selectMenuState } from "../../features/sortSlice";
 import { selectSortState } from "../../features/sortSlice";
 import { useSelector } from "react-redux";

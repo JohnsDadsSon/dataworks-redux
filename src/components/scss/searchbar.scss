@@ -2,6 +2,7 @@ $dataworksPurple: #352d56;
 .SearchIconWrapper {
   display: flex;
 }
+
 .Search {
   border-style: solid;
   border-width: 2px;
@@ -11,12 +12,13 @@ $dataworksPurple: #352d56;
   display: flex;
   margin: 1rem;
   align-items: center;
-  justify-content: left;
+  flex-direction: row;
   padding: 2px;
   flex: 1;
 }
 #searchIcon {
   color: $dataworksPurple;
+  padding: 5px;
 }
 .searchAndSwitch {
   display: flex;

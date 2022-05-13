@@ -1,4 +1,5 @@
 $dataworksPurple: #352d56;
+$iconPurple: hsla(252, 79%, 28%, 0.534);
 .sysConfigProjectManagement {
   display: flex;
   flex-direction: column;
@@ -63,11 +64,13 @@ $dataworksPurple: #352d56;
   font-weight: bold;
   padding: 2px;
   font-size: 15pt;
+  text-align: left;
 }
 .titleAndDesc {
   padding: 5px;
-  align-items: center;
-  justify-content: center;
+  padding-left: 15px;
+  align-items: left;
+  justify-content: left;
   display: grid;
   width: 100%;
 }

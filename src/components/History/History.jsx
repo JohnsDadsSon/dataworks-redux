@@ -18,26 +18,23 @@ export const History = () => {
   const handleClick = (event) => {
     dispatch(historyItemClick(event.target.value));
   };
+
   return (
     <div className="history">
       <div className="center">
         <h3> HISTORY</h3>
         <Button onClick={handleClearHistory}>Clear History</Button>
         {historyClicks.map((item) => {
-          if (historyClicks == "") {
-            return "Nothing to see!";
-          } else {
-            return (
-              <Button
-                value={item}
-                variant={highlighted == item ? "contained" : "outlined"}
-                key={item.key}
-                onClick={handleClick}
-              >
-                {item}
-              </Button>
-            );
-          }
+          return (
+            <Button
+              value={item}
+              variant={highlighted == item ? "contained" : "outlined"}
+              key={item.key}
+              onClick={handleClick}
+            >
+              {item}
+            </Button>
+          );
         })}
       </div>
     </div>
