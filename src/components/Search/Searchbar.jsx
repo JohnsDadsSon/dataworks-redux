@@ -34,7 +34,6 @@ export const Searchbar = () => {
     document.getElementById("menuSearch").value = "";
     dispatchSearch("");
   };
-
   return (
     <div className="searchAndSwitch">
       <div className="Search">
@@ -42,6 +41,7 @@ export const Searchbar = () => {
           <Search id="searchIcon" />
         </div>
         <InputBase
+          autoComplete="off"
           id="menuSearch"
           placeholder="Menu Search"
           fullWidth
@@ -64,9 +64,18 @@ export const Searchbar = () => {
             name="controlled-radio-buttons-group"
             onChange={handleChange}
             defaultValue="group"
+            color="#352d56"
           >
-            <FormControlLabel value="group" control={<Radio />} label="Group" />
-            <FormControlLabel value="az" control={<Radio />} label="A-Z" />
+            <FormControlLabel
+              value="group"
+              control={<Radio color="secondary" />}
+              label="Group"
+            />
+            <FormControlLabel
+              value="az"
+              control={<Radio color="secondary" />}
+              label="A-Z"
+            />
           </RadioGroup>
         </FormControl>
       </div>

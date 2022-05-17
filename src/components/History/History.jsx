@@ -3,6 +3,7 @@ import "../css/history.css";
 import { useSelector } from "react-redux";
 import { selectHistoryClicks } from "../../features/sortSlice";
 import { Button } from "@mui/material";
+import { ButtonUnstyled } from "@mui/base";
 import { useDispatch } from "react-redux";
 import { clearHistory } from "../../features/sortSlice";
 import { historyItemClick } from "../../features/sortSlice";
@@ -27,8 +28,9 @@ export const History = () => {
         {historyClicks.map((item) => {
           return (
             <Button
+              sx={{ padding: "10px" }}
               value={item}
-              variant={highlighted == item ? "contained" : "outlined"}
+              variant={highlighted == item ? "contained" : ""}
               key={item.key}
               onClick={handleClick}
             >

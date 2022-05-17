@@ -10,7 +10,11 @@ import { selectSearchTerm } from "../../features/sortSlice";
 import { historyClicks } from "../../features/sortSlice";
 import { useDispatch } from "react-redux";
 import { selectHighlighted } from "../../features/sortSlice";
+import { rootShouldForwardProp } from "@mui/material/styles/styled";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 export const Operations = () => {
+  const navigate = useNavigate();
   const menuState = useSelector(selectMenuState);
   const sortState = useSelector(selectSortState);
   const searchTerm = useSelector(selectSearchTerm);
@@ -41,39 +45,51 @@ export const Operations = () => {
         return ele.catagory === "Operations";
       }),
   ];
+  const startLengthOperations = menuState.filter(function (ele) {
+    return ele.catagory === "Operations";
+  }).length;
 
   if (sortState === "group") {
-    return (
-      <div className="operations">
-        <h3 className="titleHead">OPERATIONS GROUP</h3>
-        <h4 hidden={filteredOperations.length >= 1 ? true : false}>
-          Nothing to see here...
-        </h4>
+    if (filteredOperations.length > 0) {
+      return (
         <div className="operations">
-          {filteredOperations.map((item) => {
-            return (
-              <div key={item.key}>
-                <ButtonUnstyled
-                  onFocus={handleHistory}
-                  className={
-                    item.title == highlighted
-                      ? "menuItemLayoutHighlighted"
-                      : "menuItemLayout"
-                  }
-                  value={item.title}
-                >
-                  <div className="icon">{item.icon}</div>
-                  <div className="titleAndDesc">
-                    <div className="title">{item.title}</div>
-                    <div className="description">{item.description}</div>
-                  </div>
-                </ButtonUnstyled>
-              </div>
-            );
-          })}
+          <h3 className="titleHead">OPERATIONS GROUP</h3>
+
+          <div
+            className="operations"
+            style={
+              filteredOperations.length < startLengthOperations
+                ? { justifyContent: "flex-start" }
+                : { justifyContent: "space-evenly" }
+            }
+          >
+            {filteredOperations.map((item) => {
+              return (
+                <div key={item.key}>
+                  <Link to={item.link} style={{ textDecoration: "none" }}>
+                    <ButtonUnstyled
+                      onFocus={handleHistory}
+                      className={
+                        item.title == highlighted
+                          ? "menuItemLayoutHighlighted"
+                          : "menuItemLayout"
+                      }
+                      value={item.title}
+                    >
+                      <div className="icon">{item.icon}</div>
+                      <div className="titleAndDesc">
+                        <div className="title">{item.title}</div>
+                        <div className="description">{item.description}</div>
+                      </div>
+                    </ButtonUnstyled>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   } else {
     return (
       <div className="operationsAZ">

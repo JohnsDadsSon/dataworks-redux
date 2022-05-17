@@ -29,6 +29,18 @@ export const sortSlice = createSlice({
     },
     historyClicks: (state, action) => {
       if (state.historyClicks.includes(action.payload)) {
+        return void {
+          historyClicks: [
+            state.historyClicks.sort(function (x, y) {
+              return x == action.payload ? -1 : y == action.payload ? 1 : 0;
+            }),
+          ],
+        };
+      } else if (state.historyClicks.length > 9) {
+        return void {
+          historyClicks: [state.historyClicks.pop()],
+          historyClicks: [state.historyClicks.splice(0, 0, action.payload)],
+        };
       } else {
         return void {
           historyClicks: [state.historyClicks.splice(0, 0, action.payload)],

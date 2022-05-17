@@ -1,0 +1,16 @@
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: column; }
+
+.moduleIcon {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem; }
+
+.modulePage {
+  display: flex;
+  justify-content: center;
+  padding: 1rem; }
+
+/*# sourceMappingURL=modulepages.css.map */

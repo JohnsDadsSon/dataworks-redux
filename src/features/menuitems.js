@@ -29,6 +29,7 @@ export const menuitems = [
       <SettingsSuggestTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />
     ),
     catagory: "Operations",
+    link: "/SystemStatus",
     key: 0,
   },
   {
@@ -36,6 +37,7 @@ export const menuitems = [
     description: "This is the description for workflows",
     icon: <AccountTreeTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />,
     catagory: "Operations",
+    link: "/Workflows",
     key: 1,
   },
   {
@@ -43,6 +45,8 @@ export const menuitems = [
     description: "This is the description for scheduler",
     icon: <CalendarMonthTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />,
     catagory: "Operations",
+    link: "/Scheduler",
+
     key: 2,
   },
   {
@@ -50,6 +54,8 @@ export const menuitems = [
     description: "This is the description for proxy Management",
     icon: <DnsTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />,
     catagory: "Operations",
+    link: "/ProxyManagement",
+
     key: 3,
   },
   {
@@ -57,6 +63,8 @@ export const menuitems = [
     description: "This is the description for reporting",
     icon: <AssessmentTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />,
     catagory: "Operations",
+    link: "/Reporting",
+
     key: 4,
   },
   {
@@ -66,6 +74,8 @@ export const menuitems = [
       <DataThresholdingTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />
     ),
     catagory: "Operations",
+    link: "/DataManagement",
+
     key: 5,
   },
   {
@@ -73,6 +83,8 @@ export const menuitems = [
     description: "This is the description for data quality engine",
     icon: <MilitaryTechTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />,
     catagory: "Operations",
+    link: "/DataQualityEngine",
+
     key: 6,
   },
   {
@@ -80,6 +92,8 @@ export const menuitems = [
     description: "This is the description for AI lab",
     icon: <SmartToyTwoToneIcon sx={{ color: iconPurple, fontSize: 60 }} />,
     catagory: "Operations",
+    link: "/AILab",
+
     key: 7,
   },
   {

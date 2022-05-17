@@ -1,24 +1,23 @@
 import "./App.css";
-import { Operations } from "./components/Operations/Operations";
-import { Searchbar } from "./components/Search/Searchbar";
-import { History } from "./components/History/History";
 import { Topbar } from "./components/Topbar/Topbar";
-
-import { SysConfigProjectManagement } from "./components/SysConfigProjectManagement/SysConfigProjectManagement";
-import { AdminArea } from "./components/AdminArea/AdminArea";
+import { MainPage } from "./MainPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ProxyManagement } from "./Pages/ProxyManagement";
+import { Workflows } from "./Pages/Workflows";
+import { SystemStatus } from "./Pages/SystemStatus";
 const App = (props) => {
   return (
-    <div className="App">
-      <Topbar />
-      <Searchbar />
-      <div className="mainPage">
-        <History />
-        <hr></hr>
-        <Operations />
-        <SysConfigProjectManagement />
-        <AdminArea />
+    <Router>
+      <div className="App">
+        <Topbar />
+        <Routes>
+          <Route exact path="/" element={<MainPage />} />
+          <Route path="/ProxyManagement" element={<ProxyManagement />} />
+          <Route path="/Workflows" element={<Workflows />} />
+          <Route path="/SystemStatus" element={<SystemStatus />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 };
 
