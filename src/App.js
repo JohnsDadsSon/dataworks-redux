@@ -2,19 +2,19 @@ import "./App.css";
 import { Topbar } from "./components/Topbar/Topbar";
 import { MainPage } from "./MainPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ProxyManagement } from "./Pages/ProxyManagement";
-import { Workflows } from "./Pages/Workflows";
-import { SystemStatus } from "./Pages/SystemStatus";
-const App = (props) => {
+import { Module } from "./Pages/Module";
+import { selectCurrentModule } from "./features/sortSlice";
+import { useSelector } from "react-redux";
+const App = () => {
+  const module = useSelector(selectCurrentModule);
   return (
     <Router>
       <div className="App">
         <Topbar />
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-          <Route path="/ProxyManagement" element={<ProxyManagement />} />
-          <Route path="/Workflows" element={<Workflows />} />
-          <Route path="/SystemStatus" element={<SystemStatus />} />
+
+          <Route path="/module" element={<Module />} />
         </Routes>
       </div>
     </Router>

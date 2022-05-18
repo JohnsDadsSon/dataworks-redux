@@ -3,23 +3,25 @@ import "../css/history.css";
 import { useSelector } from "react-redux";
 import { selectHistoryClicks } from "../../features/sortSlice";
 import { Button } from "@mui/material";
-import { ButtonUnstyled } from "@mui/base";
+import { ActionTypes, ButtonUnstyled } from "@mui/base";
 import { useDispatch } from "react-redux";
 import { clearHistory } from "../../features/sortSlice";
 import { historyItemClick } from "../../features/sortSlice";
-import { selectHighlighted } from "../../features/sortSlice";
-
+import { Link } from "react-router-dom";
+import { menuitems } from "../../features/menuitems";
+import { buildModule } from "../../features/sortSlice";
+import { selectCurrentModule } from "../../features/sortSlice";
+import { selectModuleBuilt } from "../../features/sortSlice";
 export const History = () => {
   const dispatch = useDispatch();
   const historyClicks = useSelector(selectHistoryClicks);
-  const highlighted = useSelector(selectHighlighted);
   const handleClearHistory = () => {
     dispatch(clearHistory());
   };
-  const handleClick = (event) => {
-    dispatch(historyItemClick(event.target.value));
-  };
 
+  const handleModule = (event) => {
+    dispatch(buildModule(event.target.value));
+  };
   return (
     <div className="history">
       <div className="center">
@@ -27,7 +29,22 @@ export const History = () => {
         <Button onClick={handleClearHistory}>Clear History</Button>
         {historyClicks.map((item) => {
           return (
-            <Button
+            <Link
+              to={"/module"}
+              onFocus={handleModule}
+              key={item.key}
+              style={{ textDecoration: "none" }}
+              value={item.title}
+            >
+              <Button value={item.title}>{item.title}</Button>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+/* <Button
               sx={{ padding: "10px" }}
               value={item}
               variant={highlighted == item ? "contained" : ""}
@@ -35,10 +52,4 @@ export const History = () => {
               onClick={handleClick}
             >
               {item}
-            </Button>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+            </Button> */

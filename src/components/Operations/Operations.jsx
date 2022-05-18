@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/menuitems.css";
 import { sortMenuAlphabet, searchFilter } from "../../features/sortSlice";
 import ButtonUnstyled from "@mui/base/ButtonUnstyled";
@@ -9,19 +9,24 @@ import { useSelector } from "react-redux";
 import { selectSearchTerm } from "../../features/sortSlice";
 import { historyClicks } from "../../features/sortSlice";
 import { useDispatch } from "react-redux";
-import { selectHighlighted } from "../../features/sortSlice";
 import { rootShouldForwardProp } from "@mui/material/styles/styled";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { menuitems } from "../../features/menuitems";
+import { buildModule } from "../../features/sortSlice";
+import { selectCurrentModule } from "../../features/sortSlice";
+import { selectModuleBuilt } from "../../features/sortSlice";
 export const Operations = () => {
+  const module = useSelector(selectCurrentModule);
+  const built = useSelector(selectModuleBuilt);
   const navigate = useNavigate();
   const menuState = useSelector(selectMenuState);
   const sortState = useSelector(selectSortState);
   const searchTerm = useSelector(selectSearchTerm);
-  const highlighted = useSelector(selectHighlighted);
   const dispatch = useDispatch();
-  const handleHistory = (event) => {
-    dispatch(historyClicks(event.target.value));
+
+  const handleModule = (event) => {
+    dispatch(buildModule(event.target.value));
   };
   const filteredAZ = [
     ...menuState.filter((val) => {
@@ -66,14 +71,14 @@ export const Operations = () => {
             {filteredOperations.map((item) => {
               return (
                 <div key={item.key}>
-                  <Link to={item.link} style={{ textDecoration: "none" }}>
+                  <Link
+                    to={"/module"}
+                    onFocus={handleModule}
+                    style={{ textDecoration: "none" }}
+                    value={item.title}
+                  >
                     <ButtonUnstyled
-                      onFocus={handleHistory}
-                      className={
-                        item.title == highlighted
-                          ? "menuItemLayoutHighlighted"
-                          : "menuItemLayout"
-                      }
+                      className="menuItemLayout"
                       value={item.title}
                     >
                       <div className="icon">{item.icon}</div>
@@ -100,23 +105,20 @@ export const Operations = () => {
         {filteredAZ.map((item) => {
           return (
             <div className="operations" key={item.key}>
-              <div>
-                <ButtonUnstyled
-                  onFocus={handleHistory}
-                  value={item.title}
-                  className={
-                    item.title == highlighted
-                      ? "menuItemLayoutHighlighted"
-                      : "menuItemLayout"
-                  }
-                >
+              <Link
+                to={"/module"}
+                onFocus={handleModule}
+                style={{ textDecoration: "none" }}
+                value={item.title}
+              >
+                <ButtonUnstyled value={item.title} className="menuItemLayout">
                   <div className="icon">{item.icon}</div>
                   <div className="titleAndDesc">
                     <div className="title">{item.title}</div>
                     <div className="description">{item.description}</div>
                   </div>
                 </ButtonUnstyled>
-              </div>
+              </Link>
             </div>
           );
         })}

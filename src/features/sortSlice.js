@@ -8,7 +8,7 @@ export const sortSlice = createSlice({
     sortState: "group",
     searchTerm: "",
     historyClicks: [],
-    highlighted: [],
+    currentModule: "",
   },
   reducers: {
     sortMenuAlphabet: (state, action) => {
@@ -28,30 +28,22 @@ export const sortSlice = createSlice({
       state.searchTerm = action.payload;
     },
     historyClicks: (state, action) => {
-      if (state.historyClicks.includes(action.payload)) {
-        return void {
-          historyClicks: [
-            state.historyClicks.sort(function (x, y) {
-              return x == action.payload ? -1 : y == action.payload ? 1 : 0;
-            }),
-          ],
-        };
-      } else if (state.historyClicks.length > 9) {
-        return void {
-          historyClicks: [state.historyClicks.pop()],
-          historyClicks: [state.historyClicks.splice(0, 0, action.payload)],
-        };
-      } else {
-        return void {
-          historyClicks: [state.historyClicks.splice(0, 0, action.payload)],
-        };
-      }
+      return void {
+        historyClicks: [
+          state.historyClicks.splice(
+            0,
+            0,
+            menuitems.filter((obj) => obj.title === action.payload)[0]
+          ),
+        ],
+      };
     },
-    historyItemClick: (state, action) => {
-      state.highlighted = action.payload;
-    },
+
     clearHistory: (state) => {
       state.historyClicks = [];
+    },
+    buildModule: (state, action) => {
+      state.currentModule = action.payload;
     },
   },
 });
@@ -62,11 +54,13 @@ export const selectMenuState = (state) => state.sorting.menuState;
 export const selectSortState = (state) => state.sorting.sortState;
 export const selectSearchTerm = (state) => state.sorting.searchTerm;
 export const selectHistoryClicks = (state) => state.sorting.historyClicks;
-export const selectHighlighted = (state) => state.sorting.highlighted;
+export const selectCurrentModule = (state) => state.sorting.currentModule;
+export const selectModuleBuilt = (state) => state.sorting.isModuleBuilt;
+
 export const {
   sortMenuAlphabet,
   searchFilter,
   historyClicks,
   clearHistory,
-  historyItemClick,
+  buildModule,
 } = sortSlice.actions;
