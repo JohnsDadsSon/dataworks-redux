@@ -53,7 +53,34 @@ export const Operations = () => {
   const startLengthOperations = menuState.filter(function (ele) {
     return ele.catagory === "Operations";
   }).length;
-
+  const [isMouseOverAvatar, setMouseOverAvatar] = useState(false);
+  const handleMouseOver = () => {
+    setMouseOverAvatar(true);
+  };
+  const handleMouseOut = () => {
+    setMouseOverAvatar(false);
+  };
+  if (filteredAZ.length === 0) {
+    return (
+      <div className="container">
+        <div className="avatar">
+          <img
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            src={
+              isMouseOverAvatar
+                ? require("./left.png")
+                : require("./forward.png")
+            }
+          />
+        </div>
+        <img id="shadow" src={require("./shadow.png")} />
+        <div className="content">
+          <h1>No results found</h1>
+        </div>
+      </div>
+    );
+  }
   if (sortState === "group") {
     if (filteredOperations.length > 0) {
       return (

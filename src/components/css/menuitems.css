@@ -118,4 +118,40 @@ h3 {
   grid-template-columns: repeat(3, auto);
   margin: 1rem; }
 
+@keyframes float {
+  0% {
+    transform: translatey(0px); }
+  50% {
+    transform: translatey(-20px); }
+  100% {
+    transform: translatey(0px); } }
+.container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem; }
+
+.avatar {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite; }
+  .avatar img {
+    width: 100%;
+    height: auto; }
+
+.content {
+  max-width: 600px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  text-align: center; }
+
+#shadow {
+  opacity: 50%;
+  width: 200px;
+  height: auto; }
+
 /*# sourceMappingURL=menuitems.css.map */

@@ -13,7 +13,6 @@ const App = () => {
         <Topbar />
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-
           <Route path="/module" element={<Module />} />
         </Routes>
       </div>

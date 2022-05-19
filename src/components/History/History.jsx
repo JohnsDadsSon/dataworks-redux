@@ -25,18 +25,45 @@ export const History = () => {
   return (
     <div className="history">
       <div className="center">
-        <h3> HISTORY</h3>
-        <Button onClick={handleClearHistory}>Clear History</Button>
+        <h3 className="historyTitle">HISTORY</h3>
+        <ButtonUnstyled
+          className="clearHistory"
+          style={{
+            textDecoration: "none",
+            textAlign: "left",
+            backgroundColor: "white",
+            borderStyle: "none",
+            fontFamily: "Segoe UI",
+            fontSize: "12pt",
+            fontWeight: "",
+          }}
+          onClick={handleClearHistory}
+        >
+          CLEAR HISTORY
+        </ButtonUnstyled>
         {historyClicks.map((item) => {
           return (
             <Link
+              className="historyLink"
               to={"/module"}
               onFocus={handleModule}
-              key={item.key}
               style={{ textDecoration: "none" }}
               value={item.title}
             >
-              <Button value={item.title}>{item.title}</Button>
+              <ButtonUnstyled
+                className="historyButton"
+                style={{
+                  textDecoration: "none",
+                  textAlign: "left",
+                  backgroundColor: "white",
+                  borderStyle: "none",
+                  fontFamily: "Segoe UI",
+                  fontSize: "12pt",
+                }}
+                value={item.title}
+              >
+                {item.title}
+              </ButtonUnstyled>
             </Link>
           );
         })}

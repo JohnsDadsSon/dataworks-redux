@@ -28,15 +28,49 @@ export const sortSlice = createSlice({
       state.searchTerm = action.payload;
     },
     historyClicks: (state, action) => {
-      return void {
-        historyClicks: [
-          state.historyClicks.splice(
-            0,
-            0,
-            menuitems.filter((obj) => obj.title === action.payload)[0]
-          ),
-        ],
-      };
+      console.log(state.historyClicks);
+      if (
+        state.historyClicks.filter((obj) => obj.title === action.payload)
+          .length > 0
+      ) {
+        return void {
+          historyClicks: [
+            state.historyClicks.sort(function (x, y) {
+              return x ==
+                state.historyClicks.filter(
+                  (obj) => obj.title === action.payload
+                )[0]
+                ? -1
+                : y ==
+                  state.historyClicks.filter(
+                    (obj) => obj.title === action.payload
+                  )[0]
+                ? 1
+                : 0;
+            }),
+          ],
+        };
+      } else if (state.historyClicks.length > 9) {
+        return void {
+          historyClicks: [state.historyClicks.pop()],
+          historyClicks: [
+            state.historyClicks.splice(
+              0,
+              0,
+              menuitems.filter((obj) => obj.title === action.payload)[0]
+            ),
+          ],
+        };
+      } else
+        return void {
+          historyClicks: [
+            state.historyClicks.splice(
+              0,
+              0,
+              menuitems.filter((obj) => obj.title === action.payload)[0]
+            ),
+          ],
+        };
     },
 
     clearHistory: (state) => {
